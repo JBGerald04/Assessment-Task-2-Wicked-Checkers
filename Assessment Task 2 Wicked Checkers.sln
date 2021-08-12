@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30804.86
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assessment Task 2 Wicked Checkers", "Assessment Task 2 Wicked Checkers\Assessment Task 2 Wicked Checkers.csproj", "{953F5963-5D08-4065-A62D-15F841ABE030}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{953F5963-5D08-4065-A62D-15F841ABE030}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{953F5963-5D08-4065-A62D-15F841ABE030}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{953F5963-5D08-4065-A62D-15F841ABE030}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{953F5963-5D08-4065-A62D-15F841ABE030}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {FC4F3649-AF49-4D2E-BF7F-7C7979BA9F1D}
+	EndGlobalSection
+EndGlobal
