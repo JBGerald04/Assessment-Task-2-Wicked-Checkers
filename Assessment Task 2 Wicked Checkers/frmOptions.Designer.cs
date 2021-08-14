@@ -48,9 +48,14 @@ namespace Assessment_Task_2_Wicked_Checkers
             this.btnBack = new System.Windows.Forms.Button();
             this.btnReset = new System.Windows.Forms.Button();
             this.lblStory = new System.Windows.Forms.Label();
+            this.pnlStory = new System.Windows.Forms.Panel();
+            this.btnBackS = new System.Windows.Forms.Button();
+            this.lblStoryText = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox1.SuspendLayout();
+            this.pnlStory.SuspendLayout();
             this.SuspendLayout();
             // 
             // label4
@@ -97,7 +102,7 @@ namespace Assessment_Task_2_Wicked_Checkers
             this.groupBox2.Controls.Add(this.label3);
             this.groupBox2.Controls.Add(this.TimerOn);
             this.groupBox2.Controls.Add(this.TimerOff);
-            this.groupBox2.Location = new System.Drawing.Point(5, 200);
+            this.groupBox2.Location = new System.Drawing.Point(2, 226);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(564, 150);
             this.groupBox2.TabIndex = 27;
@@ -136,7 +141,7 @@ namespace Assessment_Task_2_Wicked_Checkers
             this.groupBox3.Controls.Add(this.label5);
             this.groupBox3.Controls.Add(this.PlayerSS);
             this.groupBox3.Controls.Add(this.label6);
-            this.groupBox3.Location = new System.Drawing.Point(5, 356);
+            this.groupBox3.Location = new System.Drawing.Point(2, 382);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.groupBox3.Size = new System.Drawing.Size(564, 150);
@@ -187,7 +192,7 @@ namespace Assessment_Task_2_Wicked_Checkers
             this.label7.AutoSize = true;
             this.label7.BackColor = System.Drawing.Color.Transparent;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(172, -17);
+            this.label7.Location = new System.Drawing.Point(169, 9);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(198, 58);
             this.label7.TabIndex = 30;
@@ -201,7 +206,7 @@ namespace Assessment_Task_2_Wicked_Checkers
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.StatOff);
             this.groupBox1.Controls.Add(this.StatOn);
-            this.groupBox1.Location = new System.Drawing.Point(5, 44);
+            this.groupBox1.Location = new System.Drawing.Point(2, 70);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(564, 150);
             this.groupBox1.TabIndex = 28;
@@ -262,26 +267,28 @@ namespace Assessment_Task_2_Wicked_Checkers
             this.btnBack.BackColor = System.Drawing.SystemColors.Control;
             this.btnBack.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBack.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBack.Location = new System.Drawing.Point(7, 594);
+            this.btnBack.Location = new System.Drawing.Point(12, 631);
             this.btnBack.Name = "btnBack";
             this.btnBack.Padding = new System.Windows.Forms.Padding(1);
             this.btnBack.Size = new System.Drawing.Size(140, 51);
             this.btnBack.TabIndex = 24;
             this.btnBack.Text = "Back";
             this.btnBack.UseVisualStyleBackColor = false;
+            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
             // btnReset
             // 
             this.btnReset.BackColor = System.Drawing.SystemColors.Control;
             this.btnReset.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnReset.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnReset.Location = new System.Drawing.Point(424, 594);
+            this.btnReset.Location = new System.Drawing.Point(404, 631);
             this.btnReset.Name = "btnReset";
             this.btnReset.Padding = new System.Windows.Forms.Padding(1);
             this.btnReset.Size = new System.Drawing.Size(153, 51);
             this.btnReset.TabIndex = 25;
             this.btnReset.Text = "Reset";
             this.btnReset.UseVisualStyleBackColor = false;
+            this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
             // 
             // lblStory
             // 
@@ -289,18 +296,66 @@ namespace Assessment_Task_2_Wicked_Checkers
             this.lblStory.BackColor = System.Drawing.SystemColors.Control;
             this.lblStory.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblStory.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblStory.Location = new System.Drawing.Point(234, 522);
+            this.lblStory.Location = new System.Drawing.Point(231, 548);
             this.lblStory.Name = "lblStory";
-            this.lblStory.Size = new System.Drawing.Size(98, 41);
+            this.lblStory.Size = new System.Drawing.Size(96, 40);
             this.lblStory.TabIndex = 26;
             this.lblStory.Text = "Story";
+            this.lblStory.Click += new System.EventHandler(this.lblStory_Click);
+            // 
+            // pnlStory
+            // 
+            this.pnlStory.Controls.Add(this.btnBackS);
+            this.pnlStory.Controls.Add(this.lblStoryText);
+            this.pnlStory.Controls.Add(this.label9);
+            this.pnlStory.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlStory.Location = new System.Drawing.Point(0, 0);
+            this.pnlStory.Name = "pnlStory";
+            this.pnlStory.Size = new System.Drawing.Size(561, 686);
+            this.pnlStory.TabIndex = 31;
+            this.pnlStory.Visible = false;
+            // 
+            // btnBackS
+            // 
+            this.btnBackS.BackColor = System.Drawing.SystemColors.Control;
+            this.btnBackS.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBackS.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBackS.Location = new System.Drawing.Point(12, 627);
+            this.btnBackS.Name = "btnBackS";
+            this.btnBackS.Padding = new System.Windows.Forms.Padding(1);
+            this.btnBackS.Size = new System.Drawing.Size(140, 51);
+            this.btnBackS.TabIndex = 33;
+            this.btnBackS.Text = "Back";
+            this.btnBackS.UseVisualStyleBackColor = false;
+            this.btnBackS.Click += new System.EventHandler(this.btnBackS_Click);
+            // 
+            // lblStoryText
+            // 
+            this.lblStoryText.Font = new System.Drawing.Font("Calibri", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblStoryText.Location = new System.Drawing.Point(12, 88);
+            this.lblStoryText.Name = "lblStoryText";
+            this.lblStoryText.Size = new System.Drawing.Size(541, 500);
+            this.lblStoryText.TabIndex = 32;
+            this.lblStoryText.Text = "    ";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.BackColor = System.Drawing.Color.Transparent;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(149, 9);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(242, 58);
+            this.label9.TabIndex = 31;
+            this.label9.Text = "The Story";
             // 
             // frmOptions
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(582, 628);
+            this.ClientSize = new System.Drawing.Size(561, 686);
             this.ControlBox = false;
+            this.Controls.Add(this.pnlStory);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.label7);
@@ -318,6 +373,8 @@ namespace Assessment_Task_2_Wicked_Checkers
             this.groupBox3.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            this.pnlStory.ResumeLayout(false);
+            this.pnlStory.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -344,5 +401,9 @@ namespace Assessment_Task_2_Wicked_Checkers
         private System.Windows.Forms.Button btnBack;
         private System.Windows.Forms.Button btnReset;
         private System.Windows.Forms.Label lblStory;
+        private System.Windows.Forms.Panel pnlStory;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Button btnBackS;
+        private System.Windows.Forms.Label lblStoryText;
     }
 }

@@ -23,7 +23,7 @@ namespace Assessment_Task_2_Wicked_Checkers
             lblHTPText.Text += "\n\nWhoever checks all of the 12 opponents checkers wins!";
         }
 
-        private void frmHowTP_Load(object sender, EventArgs e)
+        private void frmHTP_Load(object sender, EventArgs e)
         {
 
         }

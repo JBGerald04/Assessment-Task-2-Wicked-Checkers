@@ -31,8 +31,10 @@ namespace Assessment_Task_2_Wicked_Checkers
         {
             this.components = new System.ComponentModel.Container();
             this.W = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lblCheckerWinTxt = new System.Windows.Forms.Label();
+            this.pbCheckerWin = new System.Windows.Forms.PictureBox();
             this.lblPlay = new System.Windows.Forms.Label();
+            this.pbWin = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.SSDeathCount = new System.Windows.Forms.Label();
             this.labPlayerTurn = new System.Windows.Forms.Label();
@@ -43,7 +45,11 @@ namespace Assessment_Task_2_Wicked_Checkers
             this.timer = new System.Windows.Forms.Timer(this.components);
             this.lblTick = new System.Windows.Forms.Label();
             this.lblTimer = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.lblMain = new System.Windows.Forms.Label();
             this.W.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbCheckerWin)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbWin)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PlayerTurn)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -52,38 +58,62 @@ namespace Assessment_Task_2_Wicked_Checkers
             // W
             // 
             this.W.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.W.BackColor = System.Drawing.Color.Gold;
-            this.W.Controls.Add(this.label1);
+            this.W.BackColor = System.Drawing.SystemColors.Control;
+            this.W.Controls.Add(this.lblMain);
+            this.W.Controls.Add(this.lblCheckerWinTxt);
+            this.W.Controls.Add(this.pbCheckerWin);
             this.W.Controls.Add(this.lblPlay);
-            this.W.Location = new System.Drawing.Point(1084, 421);
+            this.W.Controls.Add(this.pbWin);
+            this.W.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.W.Location = new System.Drawing.Point(0, 0);
             this.W.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.W.Name = "W";
-            this.W.Size = new System.Drawing.Size(154, 40);
+            this.W.Size = new System.Drawing.Size(1598, 933);
             this.W.TabIndex = 25;
             this.W.Visible = false;
             // 
-            // label1
+            // lblCheckerWinTxt
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(805, 324);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(46, 17);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "label1";
+            this.lblCheckerWinTxt.AutoSize = true;
+            this.lblCheckerWinTxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCheckerWinTxt.Location = new System.Drawing.Point(608, 104);
+            this.lblCheckerWinTxt.Name = "lblCheckerWinTxt";
+            this.lblCheckerWinTxt.Size = new System.Drawing.Size(471, 69);
+            this.lblCheckerWinTxt.TabIndex = 3;
+            this.lblCheckerWinTxt.Text = "SeaShells Win!!!";
+            // 
+            // pbCheckerWin
+            // 
+            this.pbCheckerWin.Location = new System.Drawing.Point(637, 181);
+            this.pbCheckerWin.Name = "pbCheckerWin";
+            this.pbCheckerWin.Size = new System.Drawing.Size(412, 523);
+            this.pbCheckerWin.TabIndex = 1;
+            this.pbCheckerWin.TabStop = false;
             // 
             // lblPlay
             // 
             this.lblPlay.AutoSize = true;
             this.lblPlay.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPlay.Location = new System.Drawing.Point(699, 446);
+            this.lblPlay.Location = new System.Drawing.Point(713, 726);
             this.lblPlay.Name = "lblPlay";
             this.lblPlay.Size = new System.Drawing.Size(263, 58);
             this.lblPlay.TabIndex = 0;
             this.lblPlay.Text = "Play Again";
             this.lblPlay.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblPlay.Click += new System.EventHandler(this.lblPlay_Click);
+            // 
+            // pbWin
+            // 
+            this.pbWin.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pbWin.Location = new System.Drawing.Point(0, 0);
+            this.pbWin.Name = "pbWin";
+            this.pbWin.Size = new System.Drawing.Size(1598, 933);
+            this.pbWin.TabIndex = 2;
+            this.pbWin.TabStop = false;
             // 
             // pictureBox2
             // 
+            this.pictureBox2.Image = global::Assessment_Task_2_Wicked_Checkers.Properties.Resources.SF;
             this.pictureBox2.Location = new System.Drawing.Point(1476, 494);
             this.pictureBox2.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox2.Name = "pictureBox2";
@@ -96,7 +126,7 @@ namespace Assessment_Task_2_Wicked_Checkers
             // 
             this.SSDeathCount.AutoSize = true;
             this.SSDeathCount.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SSDeathCount.ForeColor = System.Drawing.Color.Red;
+            this.SSDeathCount.ForeColor = System.Drawing.Color.DarkGoldenrod;
             this.SSDeathCount.Location = new System.Drawing.Point(1561, 505);
             this.SSDeathCount.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.SSDeathCount.Name = "SSDeathCount";
@@ -129,7 +159,7 @@ namespace Assessment_Task_2_Wicked_Checkers
             // 
             this.SFDeathCount.AutoSize = true;
             this.SFDeathCount.Font = new System.Drawing.Font("Microsoft Sans Serif", 22.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SFDeathCount.ForeColor = System.Drawing.Color.Green;
+            this.SFDeathCount.ForeColor = System.Drawing.Color.DarkGoldenrod;
             this.SFDeathCount.Location = new System.Drawing.Point(1561, 401);
             this.SFDeathCount.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.SFDeathCount.Name = "SFDeathCount";
@@ -139,6 +169,7 @@ namespace Assessment_Task_2_Wicked_Checkers
             // 
             // pictureBox1
             // 
+            this.pictureBox1.Image = global::Assessment_Task_2_Wicked_Checkers.Properties.Resources.SS;
             this.pictureBox1.Location = new System.Drawing.Point(1476, 390);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox1.Name = "pictureBox1";
@@ -184,16 +215,40 @@ namespace Assessment_Task_2_Wicked_Checkers
             this.lblTimer.Text = "Timer";
             this.lblTimer.Visible = false;
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(1459, 350);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(121, 26);
+            this.label2.TabIndex = 28;
+            this.label2.Text = "Death Tally";
+            // 
+            // lblMain
+            // 
+            this.lblMain.AutoSize = true;
+            this.lblMain.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMain.Location = new System.Drawing.Point(713, 803);
+            this.lblMain.Name = "lblMain";
+            this.lblMain.Size = new System.Drawing.Size(273, 58);
+            this.lblMain.TabIndex = 4;
+            this.lblMain.Text = "Main Menu";
+            this.lblMain.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblMain.Click += new System.EventHandler(this.lblMain_Click);
+            // 
             // frmGame
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(1606, 941);
+            this.ClientSize = new System.Drawing.Size(1598, 933);
             this.ControlBox = false;
+            this.Controls.Add(this.W);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.lblTimer);
             this.Controls.Add(this.lblTick);
-            this.Controls.Add(this.W);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.SSDeathCount);
             this.Controls.Add(this.labPlayerTurn);
@@ -208,6 +263,8 @@ namespace Assessment_Task_2_Wicked_Checkers
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.W.ResumeLayout(false);
             this.W.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbCheckerWin)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbWin)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PlayerTurn)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -219,7 +276,6 @@ namespace Assessment_Task_2_Wicked_Checkers
         #endregion
 
         private System.Windows.Forms.Panel W;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lblPlay;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Label SSDeathCount;
@@ -231,5 +287,10 @@ namespace Assessment_Task_2_Wicked_Checkers
         private System.Windows.Forms.Timer timer;
         private System.Windows.Forms.Label lblTick;
         private System.Windows.Forms.Label lblTimer;
+        private System.Windows.Forms.Label lblCheckerWinTxt;
+        private System.Windows.Forms.PictureBox pbCheckerWin;
+        private System.Windows.Forms.PictureBox pbWin;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lblMain;
     }
 }

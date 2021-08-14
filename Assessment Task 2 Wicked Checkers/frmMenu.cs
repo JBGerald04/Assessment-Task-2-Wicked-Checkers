@@ -30,12 +30,16 @@ namespace Assessment_Task_2_Wicked_Checkers
 
         private void btnHowTP_Click(object sender, EventArgs e)
         {
-
+            var form = new frmHTP("Menu");
+            form.Show();
+            this.Hide();
         }
 
         private void btnOptions_Click(object sender, EventArgs e)
         {
-
+            var form = new frmOptions("Menu");
+            form.Show();
+            this.Hide();
         }
 
         private void btnExit_Click(object sender, EventArgs e)

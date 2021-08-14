@@ -45,6 +45,7 @@ namespace Assessment_Task_2_Wicked_Checkers
             this.btnBack.TabIndex = 16;
             this.btnBack.Text = "Back";
             this.btnBack.UseVisualStyleBackColor = true;
+            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
             // lblHTPText
             // 
@@ -71,7 +72,7 @@ namespace Assessment_Task_2_Wicked_Checkers
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(894, 544);
+            this.ClientSize = new System.Drawing.Size(886, 536);
             this.ControlBox = false;
             this.Controls.Add(this.btnBack);
             this.Controls.Add(this.lblHTPText);

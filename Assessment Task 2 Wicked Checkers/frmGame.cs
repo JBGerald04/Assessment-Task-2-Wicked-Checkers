@@ -18,6 +18,28 @@ namespace Assessment_Task_2_Wicked_Checkers
         int rows, direction = -1, x, y, SFCount = 0, SSCount = 0, CheckerKillCount = 0;
         PictureBox[,] pictureBoxes;
         string player = "", checker = "SF", checkerQ = "", lastCheckerClicked = "", rightMoveCoord = "", leftMoveCoord = "", rightMoveCoordQ = "", leftMoveCoordQ = "", killCoordL = "", killCoordR = "", killCoordLQ = "", killCoordRQ = "";
+
+        private void lblMain_Click(object sender, EventArgs e)
+        {
+            var form = new frmMenu();
+            form.Show();
+            this.Hide();
+        }
+
+        private void lblPlay_Click(object sender, EventArgs e)
+        {
+            // Play again, hiding the win screen, resetting the checkerboard, setting the winning checker to the first to play again, and resetting the death count.
+            W.Visible = false;
+            pnlGame.Controls.Clear();
+            GenerateCheckerBoard();
+            if (SSCount == 12) checker = "SF";
+            else if (SFCount == 12) checker = "SS";
+            SFDeathCount.Text = "0";
+            SSDeathCount.Text = "0";
+            SSCount = 0;
+            SFCount = 0;
+        }
+
         bool CheckerKill = false, GStats, GTimer, GPlayer;
 
         private void timer_Tick(object sender, EventArgs e)
@@ -30,12 +52,6 @@ namespace Assessment_Task_2_Wicked_Checkers
             GStats = GameStats;
             GTimer = GameTimer;
             GPlayer = GamePlayer;
-
-            // Start Timer if yes in options
-            if (GTimer == true)
-            {
-                Timer();
-            }
             InitializeComponent();
             SwapPlayer();
             GenerateCheckerBoard();
@@ -43,6 +59,11 @@ namespace Assessment_Task_2_Wicked_Checkers
 
         private void Checker_Click(object sender, EventArgs e)
         {
+            // Start Timer if yes in options
+            if (GTimer == true)
+            {
+                Timer();
+            }
             PictureBox clickedPictureBox = sender as PictureBox;
 
             // If there is nothing in the picturebox, return
@@ -362,11 +383,11 @@ namespace Assessment_Task_2_Wicked_Checkers
                 // If all checkers are killed from the other team, go-to win screen
                 if (SSCount == 12)
                 {
-                    W.Visible = true;
+                    Win("SS");
                 }
                 else if (SFCount == 12)
                 {
-                    W.Visible = true;
+                    Win("SF");
                 }
 
                 // Clear the kill coordinates
@@ -386,6 +407,25 @@ namespace Assessment_Task_2_Wicked_Checkers
 
                 // Revert the checker kill state 
                 CheckerKill = false;
+            }
+        }
+
+        private void Win(string winner)
+        {
+            W.Visible = true;
+            pbWin.Image = Properties.Resources.SunsetStory;
+            pbWin.SizeMode = PictureBoxSizeMode.StretchImage;
+            if (winner == "SF")
+            {
+                lblCheckerWinTxt.Text = " Starfish Win!!";
+                pbCheckerWin.Image = Properties.Resources.trophiestarfwin;
+                pbCheckerWin.SizeMode = PictureBoxSizeMode.StretchImage;
+            }
+            else if (winner == "SS")
+            {
+                lblCheckerWinTxt.Text = "Seashells Win!!!";
+                pbCheckerWin.Image = Properties.Resources.trophieseaswin;
+                pbCheckerWin.SizeMode = PictureBoxSizeMode.StretchImage;
             }
         }
 
